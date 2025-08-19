@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Usage:
-#   ./run-remote-tests.sh urls.txt
-#   ./run-remote-tests.sh https://host/a.tar.gz https://host/b.tgz
+#   ./_pytest.sh urls.txt
+#   ./_pytest.sh https://host/a.tar.gz https://host/b.tgz
 # From ChatGPT
 
 set -euo pipefail
