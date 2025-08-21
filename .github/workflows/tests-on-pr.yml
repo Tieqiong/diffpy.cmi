@@ -18,9 +18,7 @@ jobs:
         cmi -h
         cmi env
         cmi pack list
-        cmi -v pack list
         cmi profile list
-        cmi -v profile list
         cmi install plotting
         if [ "${RUNNER_OS}" != "Windows" ]; then
           conda list | grep -i ipympl

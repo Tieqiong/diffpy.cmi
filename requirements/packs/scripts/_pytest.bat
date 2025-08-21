@@ -108,7 +108,10 @@ if exist "tests\" (
   )
 )
 pytest
-if errorlevel 1 set /a overall_ec=1
+set "ec=%ERRORLEVEL%"
+REM keep the worst (max) code seen so far
+if %ec% GTR !overall_ec! set /a overall_ec=%ec%
+
 set "PYTHONPATH=%OLD_PYTHONPATH%"
 popd >nul
 
