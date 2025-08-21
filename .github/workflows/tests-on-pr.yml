@@ -25,7 +25,7 @@ jobs:
         if [ "${RUNNER_OS}" != "Windows" ]; then
           conda list | grep -i ipympl
         else
-          source "$CONDA/etc/profile.d/conda.sh"
+          source "$(cygpath -u "$CONDA")/etc/profile.d/conda.sh"
           conda activate test
           conda list | grep -i ipympl
         fi
