@@ -13,6 +13,7 @@ jobs:
       c_extension: false
       headless: false
       run: |
+        set -Eeuo pipefail
         echo "Test cmds"
         cmi -h
         cmi env
