@@ -1,6 +1,7 @@
 name: Tests on PR
 
 on:
+  push:
   pull_request:
   workflow_dispatch:
 
@@ -12,7 +13,16 @@ jobs:
       c_extension: false
       headless: false
       run: |
-        echo "Running tests for diffpy.cmi"
+        echo "Test cmds"
+        cmi -h
+        cmi env
+        cmi pack list
+        cmi -v pack list
+        cmi profile list
+        cmi -v profile list
+        cmi install plotting
+        conda list | grep -i matplotlib
+        echo "Running tests for diffpy.cmi dependencies"
         cmi install _tests
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
